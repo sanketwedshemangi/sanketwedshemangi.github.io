@@ -10,6 +10,10 @@
 *,*::before,*::after{box-sizing:border-box}
 html,body{background:var(--blush)}
 #sky{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#ad8fd0 0%,#bba0d8 35%,#c9b0de 70%,#d8c0e3 100%)}
+section:not(#hero){padding-block:28px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
+section:not(#hero) .col{max-width:460px;padding:34px 18px;border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,.38),rgba(255,255,255,.14));backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.55);box-shadow:0 10px 34px rgba(70,35,110,.18),inset 0 1px 0 rgba(255,255,255,.6)}
+section:not(#hero):first-of-type{padding-top:40px}
+#sky b{position:absolute;border-radius:50%;filter:blur(40px);opacity:.75}
 #sky i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;display:none}
 h2,.label,.sig,.ev .ttl,.cell b{text-shadow:0 1px 0 rgba(255,255,255,.5)}
 body{color:var(--ink);font-family:var(--body);font-size:20px;line-height:1.55;overflow-x:hidden}
@@ -261,7 +265,7 @@ body.revealed .scroll{opacity:.85}
  const pc=['#f4c6cc','#fbe8e3','#e9a7b3','#ffffff'];let ph='';
  for(let i=0;i<18;i++)ph+=`<div class="petal" style="left:${Math.random()*100}%;background:${pc[i%4]};--dx:${(Math.random()-.5)*160}px;--rot:${300+Math.random()*500}deg;animation-duration:${10+Math.random()*9}s;animation-delay:${-Math.random()*18}s"></div>`;
  const petals=document.getElementById('petals');petals.innerHTML=ph;
- document.getElementById('sky').innerHTML=Array.from({length:50},()=>`<i style="left:${Math.random()*100}%;top:${Math.random()*45}%;opacity:${(.2+Math.random()*.6).toFixed(2)}"></i>`).join('');
+ document.getElementById('sky').innerHTML=[['#f4b9d0',8,12,46],['#9fc3f0',70,30,52],['#ffffff',20,55,40],['#e6a8e0',75,70,50],['#f7d2b8',15,88,44]].map(([c,x,y,w])=>`<b style="background:${c};left:${x-w/2}%;top:${y-10}%;width:${w}%;height:${w*.9}vw"></b>`).join('')+Array.from({length:50},()=>`<i style="left:${Math.random()*100}%;top:${Math.random()*45}%;opacity:${(.2+Math.random()*.6).toFixed(2)}"></i>`).join('');
 
  const music=document.getElementById('music'),mute=document.getElementById('mute'),wave=document.getElementById('wave');music.volume=.7;
  const setIcon=()=>{wave.style.display=music.paused?'none':'';mute.setAttribute('aria-label',music.paused?'Play music':'Pause music')};
