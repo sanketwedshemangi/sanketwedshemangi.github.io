@@ -4,12 +4,12 @@
 <style>
 /* Layout: phone column. Opens on a dusty-pink envelope, then a painted sunset arch with sheer curtains, then soft blush sections in deep rose ink. One deliberate light theme, matched to the reference reel. */
 :root{
- --blush:#c7b3dc;--paper:rgba(255,255,255,.5);--rose:#4a2c5e;--rose2:#7b5596;--dusty:rgba(110,70,140,.45);--line:rgba(110,70,140,.3);--gold:#b08a3c;--ink:#3e2a50;
+ --blush:#ad8fd0;--paper:rgba(255,255,255,.42);--rose:#3d2154;--rose2:#5e3a7c;--dusty:rgba(110,70,140,.45);--line:rgba(110,70,140,.3);--gold:#b08a3c;--ink:#33204a;
  --script:'Great Vibes',cursive;--head:'Cinzel',Georgia,serif;--body:'Cormorant Garamond',Georgia,serif;--deva:'Tiro Devanagari Marathi','Noto Serif Devanagari',serif;
  color-scheme:light}
 *,*::before,*::after{box-sizing:border-box}
 html,body{background:var(--blush)}
-#sky{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#c7b3dc 0%,#d6c3e4 35%,#e3d1ea 70%,#efdfee 100%)}
+#sky{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#ad8fd0 0%,#bba0d8 35%,#c9b0de 70%,#d8c0e3 100%)}
 #sky i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;display:none}
 h2,.label,.sig,.ev .ttl,.cell b{text-shadow:0 1px 0 rgba(255,255,255,.5)}
 body{color:var(--ink);font-family:var(--body);font-size:20px;line-height:1.55;overflow-x:hidden}
@@ -220,8 +220,8 @@ body.revealed .scroll{opacity:.85}
   <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7a9b0"/><stop offset="1" stop-color="#7e7aa3"/></linearGradient>
   <radialGradient id="sun" cx=".5" cy=".5"><stop offset="0" stop-color="#fff4dc" stop-opacity=".95"/><stop offset=".35" stop-color="#ffd9b8" stop-opacity=".5"/><stop offset="1" stop-color="#ffd9b8" stop-opacity="0"/></radialGradient>
   <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f6f72"/><stop offset=".25" stop-color="#cdb0a6"/><stop offset=".5" stop-color="#e8d2c6"/><stop offset=".75" stop-color="#c3a39b"/><stop offset="1" stop-color="#7f6064"/></linearGradient>
-  <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e4a63"/><stop offset=".5" stop-color="#8a6f7c"/><stop offset=".8" stop-color="#8f7aa8"/><stop offset="1" stop-color="#c7b3dc"/></linearGradient>
-  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b99aa8"/><stop offset=".55" stop-color="#a790be"/><stop offset="1" stop-color="#c7b3dc"/></linearGradient>
+  <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e4a63"/><stop offset=".5" stop-color="#8a6f7c"/><stop offset=".8" stop-color="#8f7aa8"/><stop offset="1" stop-color="#ad8fd0"/></linearGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b99aa8"/><stop offset=".55" stop-color="#9a7fbc"/><stop offset="1" stop-color="#ad8fd0"/></linearGradient>
  </defs>`;
  s+='<rect width="400" height="800" fill="url(#sky)"/>';
  for(let i=0;i<40;i++)s+=`<circle cx="${(R()*400).toFixed(0)}" cy="${(R()*300).toFixed(0)}" r="${(R()*1.1+.3).toFixed(1)}" fill="#fff" opacity="${(R()*.6+.2).toFixed(2)}"/>`;
