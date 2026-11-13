@@ -159,6 +159,12 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(31px,8.6vw,38px);lin
  *,*::before,*::after{animation:none!important}
  #env,.ecopy,.tap,.envelope,.card,.flap,.fshadow,.seal,.arch,.arch>*,.scroll{transition-duration:.01s!important;transition-delay:0s!important}
 }
+#mute{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;width:40px;height:40px;border-radius:50%;
+ border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.42);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+ color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(30,24,80,.18);opacity:0;transition:opacity .8s ease 2.6s}
+.open #mute{opacity:1}
+#mute svg{width:17px;height:17px}
+#mute:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="dw" viewBox="-12 -12 24 24"><g fill="none" stroke="currentColor"><circle r="10" stroke-width="1.2"/><circle r="2.4" stroke-width="1.1"/><path stroke-width="1" d="M0-2.4V-10M0 2.4V10M-2.4 0H-10M2.4 0H10M-1.7-1.7-7.1-7.1M1.7 1.7 7.1 7.1M1.7-1.7 7.1-7.1M-1.7 1.7-7.1 7.1"/></g></symbol>
@@ -222,6 +228,8 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(31px,8.6vw,38px);lin
  <p class="tap">Tap to open</p>
 </div>
 
+<audio id="music" src="/music.mp3" loop preload="auto"></audio>
+<button id="mute" type="button" aria-label="Pause music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path id="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
 <main>
 <section id="hero">
  <div class="arch">
@@ -302,7 +310,11 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(31px,8.6vw,38px);lin
 (()=>{
  const $=id=>document.getElementById(id),root=document.documentElement,env=$('env');
  root.classList.add('closed');
- const open=()=>{if(root.classList.contains('open'))return;root.classList.add('open');
+ const music=$('music'),mute=$('mute'),wave=$('wave');music.volume=.6;
+ const setIcon=()=>{wave.style.display=music.paused?'none':'';mute.setAttribute('aria-label',music.paused?'Play music':'Pause music')};
+ mute.addEventListener('click',()=>{music.paused?music.play().catch(()=>{}):music.pause()});
+ music.addEventListener('play',setIcon);music.addEventListener('pause',setIcon);setIcon();
+ const open=()=>{if(root.classList.contains('open'))return;root.classList.add('open');music.play().catch(()=>{});
   setTimeout(()=>{root.classList.remove('closed');env.hidden=true},3000)};
  env.addEventListener('click',open);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
  env.focus({preventScroll:true});

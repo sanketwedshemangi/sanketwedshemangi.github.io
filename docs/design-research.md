@@ -57,3 +57,7 @@ The captain found the code-drawn art (leaf-pattern envelope, sunset arch with ro
 - **Events:** each event is anchored by its large day numeral with details left-aligned beside it, instead of a drawn icon.
 
 Screenshots: `docs/screenshots/before-*` (the previous live design) and `after-*` (this rebuild), at 360x640, 390x844, 430x932 and 1440x900; closed, mid-opening and opened.
+
+## Music
+
+`music.mp3` is "Bansuri sample E bass" from Wikimedia Commons (own work by User:Bansuri.arvind), public domain: https://commons.wikimedia.org/wiki/File:Bansuri_sample_E_bass.ogg
