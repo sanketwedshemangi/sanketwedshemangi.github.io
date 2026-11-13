@@ -60,4 +60,4 @@ Screenshots: `docs/screenshots/before-*` (the previous live design) and `after-*
 
 ## Music
 
-`music.mp3` is "Bansuri sample E bass" from Wikimedia Commons (own work by User:Bansuri.arvind), public domain: https://commons.wikimedia.org/wiki/File:Bansuri_sample_E_bass.ogg
+`music.mp3` is "Happy Indian Festive Flute Fusion Music" from Pixabay (https://pixabay.com/music/india-happy-indian-festive-flute-fusion-music-342678/), under the Pixabay Content License (free use, no credit needed), started 15 s in with a short fade-in.
