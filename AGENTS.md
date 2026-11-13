@@ -3,9 +3,9 @@
 This file is the project's committed home for project-intrinsic agent knowledge: build, test, release, architecture, and sharp-edge notes that should travel with the code.
 
 - Edit `src/site.template.html` (an HTML fragment), then run `python3 src/build.py` to regenerate `index.html`; commit both. GitHub Pages serves `index.html` from `main`.
-- `build.py` strips the template's test hooks (`window.__open`, `window.__curtain`); screenshot from an unstripped build of the template, not from `index.html`.
+- `build.py` strips the template's `/*hooks*/...` test hooks (`window.__open()`, `window.__seek(ms)` which pauses every CSS transition at that time, for mid-opening shots); screenshot from an unstripped build of the template, not from `index.html`.
 - Headless Chrome ignores small window widths: test phone sizes (360x640 to 430x932) inside fixed-size iframes in a wrapper page kept outside the repo.
-- Design rules and the captain's standing decisions (Buddhist only, lavender frosted look, script only for names, no RSVP/gallery) are in `docs/design-research.md` and the template's top comment.
+- Design rules and the captain's standing decisions (Buddhist only, lavender frosted look, script only for names, no RSVP/gallery/music, no illustrations: paper, glass, light and type only) are in `docs/design-research.md` and the template's top comment.
 
 ## Maintaining this file
 

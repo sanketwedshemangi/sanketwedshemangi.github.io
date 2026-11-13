@@ -43,3 +43,17 @@ Researched 2026-11-12 to guide the redesign of `src/site.template.html`. Several
   -> Each event: icon, title, caps day/date, italic time, address (balanced wrap), button.
 - **Numerals:** Cormorant's default old-style figures make dates look uneven; lining numerals read as more formal on screens.
   -> `font-variant-numeric: lining-nums` across the page.
+
+## 2026-11-12 rebuild: no drawn art
+
+The captain found the code-drawn art (leaf-pattern envelope, sunset arch with roses, curtains, petals) amateur and asked for a frontend-design build instead of illustrations or sourced watercolour assets. The page now uses no images at all; everything is paper, glass, light and type in CSS/SVG.
+
+- **Envelope:** a pearl-lavender envelope on the twilight sky. Its panels are lit separately (gradients per fold, a soft flap shadow, SVG `feTurbulence` paper grain) so it reads as real stock. The gold wax seal uses SVG lighting filters (displaced edge, specular dome, debossed S&H monogram) rather than flat fills.
+- **Opening:** one orchestrated sequence, all CSS transitions on a single `.open` class so it is seekable: seal lifts (0-0.55s), flap turns over in 3D (0.25-1.25s), the card rises (1.05-2.05s), the envelope fades into the hero (2.05-2.95s), then the arch and its lines settle in (2.15-4.3s). Reduced motion skips it.
+- **Hero:** a luminous glass arch (backdrop blur, gold inset hairline) on the same twilight gradient, so the envelope dissolves into it with no seam.
+- **Sheet:** one frosted sheet with an arched top replaces five identical cards (the "SaaS card kit" tell). Per-section fade-ins were removed so the page is complete at rest.
+- **Type:** the tracked all-caps eyebrows were replaced with small italic kickers and sentence-case units/buttons; frontend-design guidance flags caps labels as a templated tell. Allura stays for the names only.
+- **Date reveal:** the scratch heart became a frosted glass pane you wipe clear (canvas, soft brush), matching the glass language.
+- **Events:** each event is anchored by its large day numeral with details left-aligned beside it, instead of a drawn icon.
+
+Screenshots: `docs/screenshots/before-*` (the previous live design) and `after-*` (this rebuild), at 360x640, 390x844, 430x932 and 1440x900; closed, mid-opening and opened.
